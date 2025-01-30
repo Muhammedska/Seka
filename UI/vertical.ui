@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>211</width>
+    <height>319</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Ztrinatör</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>img/appicon.png</normaloff>img/appicon.png</iconset>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">QMainWindow{
+background-color:#1E1E1E;
+color:#64B5F6;
+}
+QPushButton{
+	background-color:#90A4AE;
+	border-radius:15px;
+	font-size:14px;
+	color:#64B5F6;
+	transition: all  500ms;
+}
+QPushButton::hover{
+	background-color:#FFB74D ;
+	border-radius:15px;
+	color:#64B5F6;
+	transition: all 100ms;
+}
+QPushButton:pressed{
+	background-color:#e5e5e5 ;
+	border-radius:15px;
+	color:#fffff;
+	transition: all 100ms;
+}
+QLineEdit{
+border: 2px gray;
+    border-radius: 20px;
+    padding: 0 8px;
+    background: #90A4AE;
+    selection-background-color: #5d6a71;
+	background-color:#90A4AE;
+
+}
+QSpinBox {
+        background-color: #90A4AE; /* Arka plan */
+        border: 1px solid #90A4AE; /* Kenarlık (İkincil Renk) */
+        padding: 5px;
+        font-size: 16px;
+        color: #FFFFFF; /* Metin Rengi */
+    }
+
+QSpinBox:focus { /* Odaklandığında */
+    border: 1px solid #64B5F6; /* Birincil Renk (Odaklanma Kenarlığı) */
+}
+QProgressBar {
+        border: 2px solid #90A4AE; /* Kenarlık (İkincil Renk) */
+        text-align: center; /* Metni ortala */
+        background-color: #1E1E1E; /* Arka plan */
+		color:#90A4AE;
+    }
+
+    QProgressBar::chunk {
+        background-color: #64B5F6; /* Dolgu rengi (Birincil Renk) */
+    }
+
+    QProgressBar::chunk:horizontal { /* Yatay çubuk için */
+        margin: 0px; /* Kenarları kaldır */
+        border-radius: 0px; /* Köşeleri düzleştir */
+    }
+
+    QProgressBar::chunk:vertical { /* Dikey çubuk için (Gerekirse) */
+        margin: 0px;
+        border-radius: 0px;
+    }
+
+    QProgressBar::indicator {
+        background-color: #FFB74D; /* Gösterge rengi (Vurgu Rengi) */
+    }
+
+    QProgressBar:disabled { /* Devre dışı olduğunda */
+        color: #555; /* Daha soluk metin */
+    }
+QLabel{
+color:#64B5F6;
+font-family:&quot;Courier new&quot;;
+font-size:20px;
+}
+QMessageBox {
+font-size: 14pt;
+background-color:#6574F8;
+color:#E8EAED;
+font-family:&quot;Courier new&quot;;
+font-size:20px;
+}
+QMessageBox QPushButton {
+    background-color: #eee;
+    border: 1px solid #ccc;
+    padding: 8px 16px;
+    margin: 5px;
+}
+
+QMessageBox QPushButton:hover {
+    background-color: #ddd;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="start">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>20</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>img/start_system.svg</normaloff>img/start_system.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="help">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>70</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>img/help.svg</normaloff>img/help.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="convert">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>img/pdf.svg</normaloff>img/pdf.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QLabel" name="locations">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>20</y>
+      <width>101</width>
+      <height>131</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>X1:1024
+Y1:0
+X2:0
+Y2:0
+CX:0
+CY:0</string>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::PlainText</enum>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>150</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>img/timer.svg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="delay">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>150</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>999999999</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>190</y>
+      <width>31</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="pixmap">
+     <pixmap>img/page.svg</pixmap>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+   <widget class="QSpinBox" name="pagecount">
+    <property name="geometry">
+     <rect>
+      <x>100</x>
+      <y>190</y>
+      <width>101</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="maximum">
+     <number>999999999</number>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>290</y>
+      <width>201</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Courier new</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>Çözelti Software</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="rotate">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>170</y>
+      <width>41</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="icon">
+     <iconset>
+      <normaloff>img/rotate.svg</normaloff>img/rotate.svg</iconset>
+    </property>
+    <property name="iconSize">
+     <size>
+      <width>32</width>
+      <height>32</height>
+     </size>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progress">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>260</y>
+      <width>191</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>0</number>
+    </property>
+    <property name="textDirection">
+     <enum>QProgressBar::TopToBottom</enum>
+    </property>
+   </widget>
+   <widget class="QLabel" name="mouselocation">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>230</y>
+      <width>211</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>Courier new</family>
+      <pointsize>-1</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>X:1204 | Y:520</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
